@@ -14,6 +14,7 @@ struct ContentView: View {
     let columns = [
             GridItem(.adaptive(minimum: 80))
         ]
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .leading) {
@@ -21,6 +22,7 @@ struct ContentView: View {
                 Text("Universities in All Countries").onAppear{
                    countries = decodeJsonData()
                 }
+               
                 if countries.count>0 {
                     ScrollView{
                         LazyVGrid(columns: columns, spacing: 20){

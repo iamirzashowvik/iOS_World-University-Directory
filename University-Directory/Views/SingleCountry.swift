@@ -21,7 +21,8 @@ struct SingleCountry: View {
     
     @State var universitiesResponse = Universities()
     
-func fetchData()async {
+    
+    func fetchData()async {
             do {
                 let url = URL(string: "http://universities.hipolabs.com/search?country="+self.countryName)!
                 let (data, _) = try await URLSession.shared.data(from: url)
@@ -34,24 +35,30 @@ func fetchData()async {
         }
     
     
+    @State private var search:String=""
+    func checkAvailable(name:String,search:String)->Bool{
+        return name.contains(search)
+    }
+    
     var body: some View {
-        VStack{
+        VStack(alignment:.leading){
+            
             HStack{
                 WebImage(url: URL(string: "https://flagsapi.com/\(countryCode)/flat/64.png"))
                 Text("Universities in \(countryName)").task {
                     await   fetchData()
                 }
-              
-                
             }
-            
+            TextField("Search",text:  $search).padding(.vertical)
             if universitiesResponse.count>0 {
                 List{
-                    ForEach (universitiesResponse,id: \.name){ university in
-                        HStack{
-                            Text(university.name!)
-                            Spacer()
-                            Link("->",destination: URL(string:university.webPages[0])! )
+                    ForEach (universitiesResponse,id: \.domains){ university in
+                        if checkAvailable(name: university.name!, search: search) || search.count==0 {
+                            HStack{
+                                Text(university.name!)
+                                Spacer()
+                                Link("->",destination: URL(string:university.webPages[0])! )
+                            }
                         }
                         
                         
