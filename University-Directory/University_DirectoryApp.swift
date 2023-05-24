@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct University_DirectoryApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

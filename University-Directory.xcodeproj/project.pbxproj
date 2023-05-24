@@ -11,6 +11,10 @@
 		7AB0484E2A1DD29D00FAD3EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0484D2A1DD29D00FAD3EA /* ContentView.swift */; };
 		7AB048502A1DD29E00FAD3EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB0484F2A1DD29E00FAD3EA /* Assets.xcassets */; };
 		7AB048532A1DD29E00FAD3EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB048522A1DD29E00FAD3EA /* Preview Assets.xcassets */; };
+		7AB0485C2A1DD3C400FAD3EA /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0485B2A1DD3C400FAD3EA /* Country.swift */; };
+		7AB048602A1DDEA900FAD3EA /* SingleCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0485F2A1DDEA900FAD3EA /* SingleCountry.swift */; };
+		7AB048652A1DE00500FAD3EA /* Universities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB048642A1DE00500FAD3EA /* Universities.swift */; };
+		7AB0486B2A1DFDC800FAD3EA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB0486A2A1DFDC800FAD3EA /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		7AB0484D2A1DD29D00FAD3EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7AB0484F2A1DD29E00FAD3EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AB048522A1DD29E00FAD3EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7AB0485B2A1DD3C400FAD3EA /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		7AB0485F2A1DDEA900FAD3EA /* SingleCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCountry.swift; sourceTree = "<group>"; };
+		7AB048642A1DE00500FAD3EA /* Universities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Universities.swift; sourceTree = "<group>"; };
+		7AB048662A1DE54000FAD3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB0486B2A1DFDC800FAD3EA /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +60,11 @@
 		7AB0484A2A1DD29D00FAD3EA /* University-Directory */ = {
 			isa = PBXGroup;
 			children = (
+				7AB048662A1DE54000FAD3EA /* Info.plist */,
+				7AB048612A1DDF2700FAD3EA /* Services */,
 				7AB0484B2A1DD29D00FAD3EA /* University_DirectoryApp.swift */,
-				7AB0484D2A1DD29D00FAD3EA /* ContentView.swift */,
+				7AB0485A2A1DD3AB00FAD3EA /* Data */,
+				7AB048592A1DD32300FAD3EA /* Views */,
 				7AB0484F2A1DD29E00FAD3EA /* Assets.xcassets */,
 				7AB048512A1DD29E00FAD3EA /* Preview Content */,
 			);
@@ -65,6 +77,31 @@
 				7AB048522A1DD29E00FAD3EA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7AB048592A1DD32300FAD3EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AB0484D2A1DD29D00FAD3EA /* ContentView.swift */,
+				7AB0485F2A1DDEA900FAD3EA /* SingleCountry.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AB0485A2A1DD3AB00FAD3EA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7AB0485B2A1DD3C400FAD3EA /* Country.swift */,
+				7AB048642A1DE00500FAD3EA /* Universities.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7AB048612A1DDF2700FAD3EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +120,9 @@
 			dependencies = (
 			);
 			name = "University-Directory";
+			packageProductDependencies = (
+				7AB0486A2A1DFDC800FAD3EA /* SDWebImageSwiftUI */,
+			);
 			productName = "University-Directory";
 			productReference = 7AB048482A1DD29D00FAD3EA /* University-Directory.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +151,9 @@
 				Base,
 			);
 			mainGroup = 7AB0483F2A1DD29D00FAD3EA;
+			packageReferences = (
+				7AB048692A1DFDC800FAD3EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 7AB048492A1DD29D00FAD3EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB048602A1DDEA900FAD3EA /* SingleCountry.swift in Sources */,
 				7AB0484E2A1DD29D00FAD3EA /* ContentView.swift in Sources */,
+				7AB0485C2A1DD3C400FAD3EA /* Country.swift in Sources */,
+				7AB048652A1DE00500FAD3EA /* Universities.swift in Sources */,
 				7AB0484C2A1DD29D00FAD3EA /* University_DirectoryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +316,7 @@
 				DEVELOPMENT_TEAM = 7SVXUY55A3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "University-Directory/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +346,7 @@
 				DEVELOPMENT_TEAM = 7SVXUY55A3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "University-Directory/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +387,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7AB048692A1DFDC800FAD3EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7AB0486A2A1DFDC800FAD3EA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AB048692A1DFDC800FAD3EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7AB048402A1DD29D00FAD3EA /* Project object */;
 }
