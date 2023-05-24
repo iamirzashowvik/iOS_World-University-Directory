@@ -14,9 +14,9 @@ import Foundation
 struct University: Codable {
     let country: String?
     let alphaTwoCode: String?
-let name: String?
+    let name: String?
     
-    let domains: [String]?
+    let domains: [String]
     let webPages: [String]
 
     enum CodingKeys: String, CodingKey {
