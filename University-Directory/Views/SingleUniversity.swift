@@ -25,13 +25,13 @@ struct SingleUniversity: View {
     var body: some View {
         VStack(alignment:.leading){
             Text(university.name!).bold()
-            Spacer()
+           
             
             HStack{
                 Image(systemName: "network")
                 Text(university.domains[0])
             }
-            Spacer()
+            
             HStack{
                 Image(systemName: "desktopcomputer")
                 Text(university.domains[0])
@@ -41,9 +41,12 @@ struct SingleUniversity: View {
             HStack{
                 Text("Visit Website")
                 Spacer()
-                Link("->",destination: URL(string:university.webPages[0])! )
-                }.padding(.vertical)
-            Spacer()
+                Text("->")
+            }.padding().background(Color(hex:0x3A2367)).foregroundColor(Color(hex:0xffffff)).frame(width: .infinity, height: 90, alignment: .center)
+                .clipShape(Rectangle()).onTapGesture {
+                    UIApplication.shared.open(URL(string: university.webPages[0])!)
+           }
+           Spacer()
             Text("Other Countries").onAppear{
                countries = decodeJsonData()
             }
@@ -57,8 +60,9 @@ struct SingleUniversity: View {
                                        label: {
                                            VStack{
                                                WebImage(url: URL(string: "https://flagsapi.com/\(country.code)/flat/64.png"))
-                                               Text(country.name)
-                                           }
+                                               Text(country.name).lineLimit(1)
+                                           }.frame(width: UIScreen.main.bounds.width/3, height: 90, alignment: .center)
+                                                                                              .clipShape(Rectangle()).padding()
                                        })
                         }
                     }.padding(.horizontal)

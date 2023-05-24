@@ -24,7 +24,7 @@ func decodeJsonData()->[Country]{
     let jsonDecoder = JSONDecoder()
     do {
         let decodedCountry = try jsonDecoder.decode(Array<Country>.self, from: countries)
-        print("Person -- \(decodedCountry[0].name) was decode")
+//        print("Person -- \(decodedCountry[0].name) was decode")
         return decodedCountry;
     } catch {
         print("Error: \(error.localizedDescription)")

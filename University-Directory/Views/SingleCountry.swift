@@ -28,8 +28,11 @@ struct SingleCountry: View {
                 if url == nil{
                     return;
                 }
+            
                 let (data, _) = try await URLSession.shared.data(from: url!)
+                
                 let decodedData = try JSONDecoder().decode(Universities.self, from: data)
+                
                 self.universitiesResponse = decodedData
                 
             } catch {
