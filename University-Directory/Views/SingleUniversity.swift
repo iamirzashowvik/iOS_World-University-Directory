@@ -46,7 +46,7 @@ struct SingleUniversity: View {
                 .clipShape(Rectangle()).onTapGesture {
                     UIApplication.shared.open(URL(string: university.webPages[0])!)
            }
-           Spacer()
+         
             Text("Other Countries").onAppear{
                countries = decodeJsonData()
             }
@@ -66,7 +66,7 @@ struct SingleUniversity: View {
                                        })
                         }
                     }.padding(.horizontal)
-                }.frame(maxHeight: 300)
+                }.frame(maxHeight: .infinity)
 
             }
             
