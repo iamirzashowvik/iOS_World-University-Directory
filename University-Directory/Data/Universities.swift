@@ -12,12 +12,12 @@ import Foundation
 
 
 struct University: Codable {
-    let country: String?
-    let alphaTwoCode: String?
-    let name: String?
+    var country: String?
+    var alphaTwoCode: String?
+    var name: String?
     
-    let domains: [String]
-    let webPages: [String]
+    var domains: [String]?
+    var webPages: [String]?
 
     enum CodingKeys: String, CodingKey {
         case country = "country"

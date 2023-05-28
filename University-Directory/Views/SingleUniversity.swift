@@ -29,12 +29,12 @@ struct SingleUniversity: View {
             
             HStack{
                 Image(systemName: "network")
-                Text(university.domains[0])
+//                Text(university.domains[0]??"")
             }
             
             HStack{
                 Image(systemName: "desktopcomputer")
-                Text(university.domains[0])
+//                Text(university.domains[0])
             }
             
             
@@ -44,7 +44,7 @@ struct SingleUniversity: View {
                 Text("->")
             }.padding().background(Color(hex:0x3A2367)).foregroundColor(Color(hex:0xffffff)).frame(width: .infinity, height: 90, alignment: .center)
                 .clipShape(Rectangle()).onTapGesture {
-                    UIApplication.shared.open(URL(string: university.webPages[0])!)
+//                    UIApplication.shared.open(URL(string: university.webPages[0])!)
            }
          
             Text("Other Countries").onAppear{

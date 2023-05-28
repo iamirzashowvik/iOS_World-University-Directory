@@ -22,8 +22,8 @@ struct SingleCountry: View {
     @State var universitiesResponse = Universities()
     
     
-    func fetchData()async {
-            do {
+//    func fetchData()async {
+//            do {
 //                let url = URL(string: "http://universities.hipolabs.com/search?country="+self.countryName)
 //                if url == nil{
 //                    return;
@@ -34,17 +34,23 @@ struct SingleCountry: View {
 //                let decodedData = try JSONDecoder().decode(Universities.self, from: data)
 //
 //                self.universitiesResponse = decodedData
-                let body: Data? = nil
-                let headers: [String: String]? = nil
-                let result:Universities = try  API.request(url: "http://universities.hipolabs.com/search?country="+self.countryName, method: "GET", body: body, headers: headers)
-                       
-                      
-                
-            } catch {
-                print("Error fetching data: \(error)")
+//            } catch {
+//                print("Error fetching data: \(error)")
+//            }
+//        }
+    func fetchData()async {
+                do {
+                    let body: Data? = nil
+                    let api = API()
+                    let headers: [String: String]? = nil
+                    self.universitiesResponse = try  await api.request(url: "http://universities.hipolabs.com/search?country="+self.countryName, method: "GET", body: body, headers: headers)
+                          
+                          
+                    
+                } catch {
+                    print("Error fetching data: \(error)")
+                }
             }
-        }
-    
     
     @State private var search:String=""
     func checkAvailable(name:String,search:String)->Bool{
