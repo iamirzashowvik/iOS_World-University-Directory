@@ -1,13 +1,3 @@
-//
-//  Universities.swift
-//  University-Directory
-//
-//  Created by Mirza  on 24/5/23.
-//
-
-
-//   let universities = try? JSONDecoder().decode(Universities.self, from: jsonData)
-
 import Foundation
 
 

@@ -1,12 +1,4 @@
-//
-//  SingleCountry.swift
-//  University-Directory
-//
-//  Created by Mirza  on 24/5/23.
-//
-
 import SwiftUI
-
 import Foundation
 import SDWebImageSwiftUI
 
@@ -22,31 +14,12 @@ struct SingleCountry: View {
     @State var universitiesResponse = Universities()
     
     
-//    func fetchData()async {
-//            do {
-//                let url = URL(string: "http://universities.hipolabs.com/search?country="+self.countryName)
-//                if url == nil{
-//                    return;
-//                }
-//
-//                let (data, _) = try await URLSession.shared.data(from: url!)
-//
-//                let decodedData = try JSONDecoder().decode(Universities.self, from: data)
-//
-//                self.universitiesResponse = decodedData
-//            } catch {
-//                print("Error fetching data: \(error)")
-//            }
-//        }
     func fetchData()async {
                 do {
                     let body: Data? = nil
                     let api = API()
                     let headers: [String: String]? = nil
                     self.universitiesResponse = try  await api.request(url: "http://universities.hipolabs.com/search?country="+self.countryName, method: "GET", body: body, headers: headers)
-                          
-                          
-                    
                 } catch {
                     print("Error fetching data: \(error)")
                 }
@@ -79,7 +52,6 @@ struct SingleCountry: View {
                                 }
                             }
                         }
-                        
                         
                     }
                 }

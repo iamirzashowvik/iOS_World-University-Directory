@@ -18,7 +18,7 @@ class API {
         return try decoder.decode(T.self, from: data)
             
         }else{
-            throw   CustomError.unexpected(code: 102)
+            throw   CustomError.unexpected(code: 405)
         }
         
     }
