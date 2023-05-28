@@ -24,16 +24,21 @@ struct SingleCountry: View {
     
     func fetchData()async {
             do {
-                let url = URL(string: "http://universities.hipolabs.com/search?country="+self.countryName)
-                if url == nil{
-                    return;
-                }
-            
-                let (data, _) = try await URLSession.shared.data(from: url!)
-                
-                let decodedData = try JSONDecoder().decode(Universities.self, from: data)
-                
-                self.universitiesResponse = decodedData
+//                let url = URL(string: "http://universities.hipolabs.com/search?country="+self.countryName)
+//                if url == nil{
+//                    return;
+//                }
+//
+//                let (data, _) = try await URLSession.shared.data(from: url!)
+//
+//                let decodedData = try JSONDecoder().decode(Universities.self, from: data)
+//
+//                self.universitiesResponse = decodedData
+                let body: Data? = nil
+                let headers: [String: String]? = nil
+                let result:Universities = try  API.request(url: "http://universities.hipolabs.com/search?country="+self.countryName, method: "GET", body: body, headers: headers)
+                       
+                      
                 
             } catch {
                 print("Error fetching data: \(error)")

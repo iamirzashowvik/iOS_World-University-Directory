@@ -17,6 +17,10 @@
 		7AB0486B2A1DFDC800FAD3EA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB0486A2A1DFDC800FAD3EA /* SDWebImageSwiftUI */; };
 		7AB0486D2A1E157F00FAD3EA /* SingleUniversity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0486C2A1E157F00FAD3EA /* SingleUniversity.swift */; };
 		7AB0486F2A1E5C0800FAD3EA /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0486E2A1E5C0800FAD3EA /* LocalStorage.swift */; };
+		7AF55FD22A23056800D4244F /* AFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF55FD12A23056800D4244F /* AFService.swift */; };
+		7AF55FD52A2305B700D4244F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF55FD42A2305B700D4244F /* Alamofire */; };
+		7AF55FD82A231B9A00D4244F /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF55FD72A231B9A00D4244F /* ObjectMapper */; };
+		7AF55FDB2A231D0700D4244F /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF55FDA2A231D0700D4244F /* PromiseKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,7 @@
 		7AB048662A1DE54000FAD3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7AB0486C2A1E157F00FAD3EA /* SingleUniversity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUniversity.swift; sourceTree = "<group>"; };
 		7AB0486E2A1E5C0800FAD3EA /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		7AF55FD12A23056800D4244F /* AFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF55FD82A231B9A00D4244F /* ObjectMapper in Frameworks */,
+				7AF55FDB2A231D0700D4244F /* PromiseKit in Frameworks */,
 				7AB0486B2A1DFDC800FAD3EA /* SDWebImageSwiftUI in Frameworks */,
+				7AF55FD52A2305B700D4244F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB0486E2A1E5C0800FAD3EA /* LocalStorage.swift */,
+				7AF55FD12A23056800D4244F /* AFService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,6 +137,9 @@
 			name = "University-Directory";
 			packageProductDependencies = (
 				7AB0486A2A1DFDC800FAD3EA /* SDWebImageSwiftUI */,
+				7AF55FD42A2305B700D4244F /* Alamofire */,
+				7AF55FD72A231B9A00D4244F /* ObjectMapper */,
+				7AF55FDA2A231D0700D4244F /* PromiseKit */,
 			);
 			productName = "University-Directory";
 			productReference = 7AB048482A1DD29D00FAD3EA /* University-Directory.app */;
@@ -159,6 +171,9 @@
 			mainGroup = 7AB0483F2A1DD29D00FAD3EA;
 			packageReferences = (
 				7AB048692A1DFDC800FAD3EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				7AF55FD32A2305B700D4244F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7AF55FD62A231B9900D4244F /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				7AF55FD92A231D0700D4244F /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = 7AB048492A1DD29D00FAD3EA /* Products */;
 			projectDirPath = "";
@@ -188,6 +203,7 @@
 			files = (
 				7AB048602A1DDEA900FAD3EA /* SingleCountry.swift in Sources */,
 				7AB0484E2A1DD29D00FAD3EA /* ContentView.swift in Sources */,
+				7AF55FD22A23056800D4244F /* AFService.swift in Sources */,
 				7AB0485C2A1DD3C400FAD3EA /* Country.swift in Sources */,
 				7AB048652A1DE00500FAD3EA /* Universities.swift in Sources */,
 				7AB0484C2A1DD29D00FAD3EA /* University_DirectoryApp.swift in Sources */,
@@ -405,6 +421,30 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		7AF55FD32A2305B700D4244F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		7AF55FD62A231B9900D4244F /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		7AF55FD92A231D0700D4244F /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -412,6 +452,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7AB048692A1DFDC800FAD3EA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		7AF55FD42A2305B700D4244F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AF55FD32A2305B700D4244F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7AF55FD72A231B9A00D4244F /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AF55FD62A231B9900D4244F /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+		7AF55FDA2A231D0700D4244F /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AF55FD92A231D0700D4244F /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
