@@ -9,7 +9,7 @@ struct SingleCountry: View {
         self.countryName = countryName
         self.countryCode = countryCode
     }
-    
+    // update
     
     @State var universitiesResponse = Universities()
     
